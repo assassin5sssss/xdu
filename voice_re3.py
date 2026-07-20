@@ -16,6 +16,19 @@ import sounddevice as sd
 import warnings
 from pathlib import Path
 
+# 兼容线上无torch环境
+try:
+    import torch
+    import torchvision
+except ImportError:
+    torch = None
+    torchvision = None
+
+# 兼容线上无音频设备
+try:
+    import sounddevice as sd
+except ImportError:
+    sd = None
 # ---------------------- 可选进度条 ----------------------
 try:
     from tqdm import tqdm
