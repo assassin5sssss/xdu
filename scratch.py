@@ -4,6 +4,19 @@ import matplotlib.pyplot as plt
 import matplotlib
 from PIL import ImageFont
 
+# 兼容线上无torch环境
+try:
+    import torch
+    import torchvision
+except ImportError:
+    torch = None
+    torchvision = None
+
+# 兼容线上无音频设备
+try:
+    import sounddevice as sd
+except ImportError:
+    sd = None
 # ========== 在文件开头添加 ==========
 # 设置中文字体
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
