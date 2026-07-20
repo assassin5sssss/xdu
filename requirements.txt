@@ -5,8 +5,7 @@ opencv-python-headless
 pillow
 scikit-image
 scikit-learn
-pyarrow==17.0.0
-
+pyarrow
 matplotlib
 seaborn
 
