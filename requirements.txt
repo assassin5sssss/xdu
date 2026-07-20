@@ -1,24 +1,18 @@
-numpy
-scipy
-
-opencv-python-headless
-pillow
-scikit-image
-scikit-learn
-pyarrow
-matplotlib
-seaborn
-
-tqdm
+# Streamlit Community Cloud / Python 3.11
+# Pin binary-wheel releases so Cloud does not try to compile pyarrow/scipy.
 streamlit==1.51.0
+pyarrow==17.0.0
 
-altair
-pandas
-protobuf
-jinja2
-markdown
-bleach
-packaging
-pydeck
-tenacity
-toml
+numpy==1.26.4
+scipy==1.14.1
+opencv-python-headless==4.10.0.84
+pillow==11.0.0
+scikit-image==0.24.0
+scikit-learn==1.5.2
+matplotlib==3.9.2
+tqdm==4.67.1
+
+# The KSVD repair modules use torch/torchvision even in CPU mode.
+# Direct CPython 3.11 Linux wheels avoid downloading CUDA libraries in the cloud.
+https://download.pytorch.org/whl/cpu/torch-2.5.1%2Bcpu-cp311-cp311-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.20.1%2Bcpu-cp311-cp311-linux_x86_64.whl
