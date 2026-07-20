@@ -10,7 +10,20 @@ from PIL import ImageFont
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 # ===================================
+# 兼容线上无torch环境
+try:
+    import torch
+    import torchvision
+except ImportError:
+    torch = None
+    torchvision = None
 
+# 兼容线上无音频设备
+try:
+    import sounddevice as sd
+except ImportError:
+    sd = None
+    
 from matplotlib.patches import Polygon
 import os
 import time
