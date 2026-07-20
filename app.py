@@ -7,6 +7,17 @@ KSVD & SVD 综合应用平台
 """
 
 import streamlit as st
+# 屏蔽torch
+try:
+    import torch
+    import torchvision
+except ImportError:
+    torch = None
+# 屏蔽音频库
+try:
+    import sounddevice as sd
+except ImportError:
+    sd = None
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
