@@ -1,13 +1,12 @@
 numpy
 scipy
-torch
-torchvision
+
 opencv-python-headless
 pillow
 scikit-image
 scikit-learn
 
-sounddevice
+
 matplotlib
 seaborn
 
